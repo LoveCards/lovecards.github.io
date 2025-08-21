@@ -25,18 +25,22 @@ jobs:
                   # 缓存 pnpm 依赖
                   # cache: pnpm
 
+            # 更新 actions/cache 到 v3
             - name: 缓存目录 node_modules
               id: cache-node-modules
               uses: actions/cache@v3
               with:
-                  path: node_modules
-                  key: ${{ runner.os }}-18-nodeModules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('package.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-18-nodeModules-
-
+                path: node_modules
+                key: ${{ runner.os }}-18-nodeModules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('package.json') }}
+                restore-keys: |
+                    ${{ runner.os }}-18-nodeModules-
+            
             - name: 安装依赖
               if: steps.cache-node-modules.outputs.cache-hit != 'true'
               run: npm install
+
+            - name: 更新 Browserslist 数据库
+              run: npx update-browserslist-db@latest
 
             - name: 构建vuepress
               run: npm run build
