@@ -9,13 +9,13 @@ description: 查阅指南
 -   虚拟主机部署教程
     -   [汉堡云一键部署](./VirtualSpaceDeploymentHBY.md)
     -   [EasyPanel面板部署](./VirtualSpaceDeployment.md)
--   宝塔面板部署
+-   面板部署
     -   [宝塔面板部署-新](./BTDeploymenHBY.md)
     -   [宝塔面板部署](./BTDeploymen.md)
--   [1panel面板部署](./1panelDeploymen.md)
+    -   [1panel面板部署](./1panelDeploymen.md)
 -   [Docker部署❌](./DockerDeployment.md)
 -   [拓展与帮助❌](./ExpandAndHelp.md)
--   [安装主题](./ThemeAdd.md)
+
 
 # 推荐
 
