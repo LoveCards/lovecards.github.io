@@ -19,6 +19,6 @@ description: 查阅指南
 
 # 推荐
 
-<img src="https://hbyidc.com/themes/web/www/upload/local66609781bca26.png" width="50%">
+<img src="https://hbyidc.com/home.htm" width="50%">
 
- LoveCard V2 合作伙伴 汉堡云 [hbyidc.com 立即前往](https://hbyidc.com/aff/WOQYOSHM)
+ LoveCard V2 合作伙伴 汉堡云 [hbyidc.com 立即前往](https://hbyidc.com/recommend/4ai5youo0mTC)
