@@ -64,7 +64,6 @@ title: 虚拟主机部署指南
 安装界面的用户名/数据库 就是控制面板显示的数据库账号
 安装界面的密码 就是控制面板显示的数据库密码
 ![image](../../../Images/Docs/V2/QuickStart/VirtualSpaceDeploymentHBY/9cfa9635-36d3-482a-b895-939cc8a720db.png)
-![image](../../../Images/Docs/V2/QuickStart/VirtualSpaceDeploymentHBY/76546838-014b-4f25-8eea-95b373471118.png)
 
 密钥这里 直接下一步即可
 ![image](../../../Images/Docs/V2/QuickStart/VirtualSpaceDeploymentHBY/f2f777d3-52e4-4bb9-ad0b-2b11c8136428.png)
