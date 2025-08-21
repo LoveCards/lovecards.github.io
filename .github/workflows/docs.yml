@@ -17,14 +17,6 @@ jobs:
                   # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
                   fetch-depth: 0
 
-            # - name: Setup pnpm
-            #   uses: npm/action-setup@v2
-            #   with:
-            #       # 选择要使用的 pnpm 版本
-            #       version: 8
-            #       # 使用 pnpm 安装依赖
-            #       run_install: true
-
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
@@ -33,26 +25,22 @@ jobs:
                   # 缓存 pnpm 依赖
                   # cache: pnpm
 
-            # https://mrseawave.github.io/blogs/articles/2021/12/17/github-actions-cache/
             - name: 缓存目录 node_modules
               id: cache-node-modules
-              uses: actions/cache@v2
+              uses: actions/cache@v3
               with:
-                path: node_modules
-                key: ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('package.json') }}
-                restore-keys: |
-                    ${{ runner.os }}-${{ matrix.node-version }}-nodeModules-
-            
+                  path: node_modules
+                  key: ${{ runner.os }}-18-nodeModules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('package.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-18-nodeModules-
+
             - name: 安装依赖
               if: steps.cache-node-modules.outputs.cache-hit != 'true'
               run: npm install
 
-            # 运行构建脚本
             - name: 构建vuepress
               run: npm run build
 
-            # 查看 workflow 的文档来获取更多信息
-            # @see https://github.com/crazy-max/ghaction-github-pages
             - name: 发布到分支page
               uses: crazy-max/ghaction-github-pages@v3
               with:
@@ -61,5 +49,5 @@ jobs:
                   # 部署目录为 VuePress 的默认输出目录
                   build_dir: docs/.vuepress/dist
               env:
-                  # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
+                  # 使用 GITHUB_TOKEN 进行身份验证
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
